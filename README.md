@@ -1,1 +1,1 @@
-# MSRCE
+# Geometric Context Sensitive Loss
