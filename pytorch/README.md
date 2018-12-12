@@ -29,7 +29,7 @@ How to select different loss function:
     Output Label file: point_1.x point_2.x point_3.x ... point_1.y point_2.y point_3.y ... 
     
 ## Test Example (WFLW datasets)
-    <img src=![image](https://github.com/nianfudong/GCS/tree/master/pytorch/assets/0.jpg) >
+    ![image](https://github.com/nianfudong/GCS/tree/master/pytorch/assets/0.jpg)
     <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/1.jpg" >
     <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/2.jpg" >
  
