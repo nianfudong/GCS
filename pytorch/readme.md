@@ -12,6 +12,7 @@ GCS loss for 2D facial landmark localization in PyTorch.
 mylambda in train.py (line 150) controls the hyper-parameter.
 
 How to select different loss function:
+
     $ criterion = Wing_loss.Wing_loss()     #Wing Loss (Feng et al. CVPR2018)
     $ criterion = nn.MSELoss()              #
     $ criterion = nn.L1Loss()               #
