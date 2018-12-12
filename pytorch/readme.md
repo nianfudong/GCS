@@ -36,4 +36,6 @@ How to select different loss function:
     <img src="./assets/2.jpg" \>
     </figure>
     
+    <p align="center"><img src="assets/1.jpg" width="480"\></p>
+    
 
