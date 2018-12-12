@@ -31,9 +31,9 @@ How to select different loss function:
 ## Test Example (WFLW datasets)
 
     <figure class="third">
-    <img src="./assets/0.jpg"/>
-    <img src="./assets/1.jpg"/>
-    <img src="./assets/2.jpg"/>
+    <img src="./assets/0.jpg" \>
+    <img src="./assets/1.jpg" \>
+    <img src="./assets/2.jpg" \>
     </figure>
     
 
