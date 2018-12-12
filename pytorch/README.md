@@ -30,7 +30,8 @@ How to select different loss function:
     
 ## Test Example (WFLW datasets)
     ![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/0.jpg)
-    <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/1.jpg" >
+    
+    <img src="https://github.com/nianfudong/GCS/blob/master/pytorch/assets/1.jpg" >
     <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/2.jpg" >
  
   
