@@ -13,10 +13,10 @@ mylambda in train.py (line 150) controls the hyper-parameter.
 
 How to select different loss function:
 
-    $ criterion = Wing_loss.Wing_loss()     #Wing Loss (Feng et al. CVPR2018)
-    $ criterion = nn.MSELoss()              #
-    $ criterion = nn.L1Loss()               #
-    $ criteriongcs = Gcs_loss.Gcs_loss()    # 
+    $ criterion = Wing_loss.Wing_loss()     # Wing Loss (Feng et al. CVPR2018)
+    $ criterion = nn.MSELoss()              # General L2 loss
+    $ criterion = nn.L1Loss()               # General L1 loss
+    $ criteriongcs = Gcs_loss.Gcs_loss()    # The proposed GCS loss
     
 ## Test
     $ python netforward.py
