@@ -24,4 +24,7 @@ How to select different loss function:
 ## Eval
     $ python evaluation.py
     
+## Label Format
+    Input Label file: imagename point_1.x point_1.y point_2.x point_2.y point_3.x point_3.y point_4.x point_4.y
+    
 
