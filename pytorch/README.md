@@ -31,11 +31,10 @@ How to select different loss function:
 ## Test Example (WFLW datasets)
 
     <figure class="third">
-    <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/0.jpg" \>
-    <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/1.jpg" \>
-    <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/2.jpg" \>
+    <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/0.jpg" >
+    <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/1.jpg" >
+    <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/2.jpg" >
     </figure>
-    
-    <p align="center"><img src="assets/1.jpg" width="480"\></p>
+
     
 
