@@ -29,11 +29,25 @@ How to select different loss function:
     Output Label file: point_1.x point_2.x point_3.x ... point_1.y point_2.y point_3.y ... 
     
 ## Test Example (WFLW datasets)
-    ![image](https://github.com/nianfudong/GCS/pytorch/assets/0.jpg)
-    
-    <img src="https://github.com/nianfudong/GCS/pytorch/assets/1.jpg" >
-    <img src="https://github.com/nianfudong/GCS/tree/master/pytorch/assets/2.jpg" >
- 
-  
-    
 
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/0.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/1.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/2.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/3.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/4.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/5.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/6.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/7.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/8.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/9.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/10.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/11.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/12.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/13.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/14.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/15.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/16.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/17.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/18.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/19.jpg)
+![image](https://github.com/nianfudong/GCS/blob/master/pytorch/assets/20.jpg)
