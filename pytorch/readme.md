@@ -9,6 +9,7 @@ GCS loss for 2D facial landmark localization in PyTorch.
 ## Train
     $ python train.py 
 
+mylambda in train.y (line 150) controls the hyper-parameter.
 ## Test
     $ python netforward.py
    
