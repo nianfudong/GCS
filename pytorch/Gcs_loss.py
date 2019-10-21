@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as func
 import math
 
+
 class Gcs_loss(nn.Module):
     def __init__(self):
         super(Gcs_loss,self).__init__()
@@ -34,6 +35,7 @@ class Gcs_loss(nn.Module):
             losses.append(distX)
             losses.append(distY)
         losses = torch.Tensor(losses).cuda()
+        
         #print(pred)
         #print(predY)
         #print(predY.size())
