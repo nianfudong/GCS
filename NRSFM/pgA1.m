@@ -24,6 +24,7 @@ function [X,M,S,t,S3,output] = pgA1( W, D, K, B, lambda, X0, options )
 %
 pgCheckBuildKronmex()
 
+
 % (1) Initialization: estimate t and make W zero mean
 [T,n] = size(W); T=T/2;
 I3 = eye(3);
@@ -32,18 +33,18 @@ if isfield(options,'A2');
     Wc = W;
 else
     t = mean(W,2);
-    Wc = W - repmat(t, 1, n);  %¼õÈ¥¾ùÖµ
+    Wc = W - repmat(t, 1, n);  %å‡å»å‡å€¼
 end
 
 d = size(B,2);                              % number of basis vectors in B
 if ~exist('X0','var') || isempty(X0)
-    X0 = eye(d,K);    %³õÊ¼»¯Îªµ¥Î»¾ØÕó                      % deterministic initialization of X
+    X0 = eye(d,K);    %åˆå§‹åŒ–ä¸ºå•ä½çŸ©é˜µ                      % deterministic initialization of X
 end
 
 Bnr = D * kronmex( B, I3 );
 V   = pgVecAxI (d, K, 3);           % mapping matrix: vec(kron(X,I3)) = V vec(X)
-I2T = speye(2*T); %Ï¡Êèµ¥Î»¾ØÕó 2ĞĞTÁĞ
-P    = cell(K,1);                   % projections orthogonal to each Mk  % PÊÇÒ»¸öKĞĞ1ÁĞµÄcell ĞÍ¾ØÕó
+I2T = speye(2*T); %ç¨€ç–å•ä½çŸ©é˜µ 2è¡ŒTåˆ—
+P    = cell(K,1);                   % projections orthogonal to each Mk  % Pæ˜¯ä¸€ä¸ªKè¡Œ1åˆ—çš„cell å‹çŸ©é˜µ
 cols = 1:(9*d);                     % column indices for Jacobian terms
 Jj = zeros(2*T, 9*d*K);             % Jacobian matrix
 Ji = zeros(2*T, 9*d*K);             % Jacobian matrix
@@ -63,7 +64,7 @@ S3 = kronmex( C, I3 ) * S;
 
 % return % (done!)
 %% -----------------------------------------------------------------------------
-%¸üĞÂMºÍS
+%æ›´æ–°Må’ŒS
 %piM
     function [X,C,M,S,piM] = updateFactors( vecX )
         
@@ -95,24 +96,24 @@ S3 = kronmex( C, I3 ) * S;
         % revised end
         
         % 2D fit error, f(M)
-        c = 1 / numel(Wc);     % numel:¾ØÕóÔªËØµÄ¸öÊı
+        c = 1 / numel(Wc);     % numel:çŸ©é˜µå…ƒç´ çš„ä¸ªæ•°
         %   c2 = 1/(T*n*(n-1));
         c2 = 1/(2*T*c22);
         
         % revised
-        % original code£º f = (c/2) * ( R(:)'*R(:));
-        % f = (c/2) * ( R(:)'*R(:)) + (c2/2)*lambda*(R_re(:)'*R_re(:));    %ÏòÁ¿2·¶Êı£¬ÏòÁ¿ÔªËØµÄÆ½·½ºÍÔÙ¿ª·½
+        % original codeï¼š f = (c/2) * ( R(:)'*R(:));
+        % f = (c/2) * ( R(:)'*R(:)) + (c2/2)*lambda*(R_re(:)'*R_re(:));    %å‘é‡2èŒƒæ•°ï¼Œå‘é‡å…ƒç´ çš„å¹³æ–¹å’Œå†å¼€æ–¹
         f = (c/2) * ( R(:)'*R(:)) + (c2/2)*lambda*R_re;
         % revised end
         
-        %f = sqrt(mean( R(:).^2 ));   %ÕâÒ»¾äÃ»ÓÃµ½£¬ºÍÂÛÎÄÖĞÓĞËù²»Í¬
+        %f = sqrt(mean( R(:).^2 ));   %è¿™ä¸€å¥æ²¡ç”¨åˆ°ï¼Œå’Œè®ºæ–‡ä¸­æœ‰æ‰€ä¸åŒ
         
         
         if (nargout < 2), return, end         % all done
         g1 = zeros(d*K,1);     g2 = zeros(d*K,1);
         if (nargout > 2), H1 = zeros(d*K); H2 = zeros(d*K);end
         
-        %KÊÇ±êÁ¿
+        %Kæ˜¯æ ‡é‡
         % (2) Compute projection onto the orthogonal space of each triplet Mk
         P{K} = (I2T - M(:, 3*K-[2 1 0]) * piM{K});
         for k = (K-1):-1:1
@@ -131,14 +132,14 @@ S3 = kronmex( C, I3 ) * S;
                 Jj(:,cols+dc) = [ sjk(1)*P{k} sjk(2)*P{k} sjk(3)*P{k} ];
             end
             JjV = Jj*V;
-            g1 = g1 - (R(:,j)' * JjV)';    %ÇóËùÓĞj¸öµãµÄÌİ¶È
+            g1 = g1 - (R(:,j)' * JjV)';    %æ±‚æ‰€æœ‰jä¸ªç‚¹çš„æ¢¯åº¦
             
             if (nargout < 3), continue, end
-            H1 = H1 + JjV'*JjV;    %ÇóËùÓĞj¸öµãµÄJ¾ØÕó
+            H1 = H1 + JjV'*JjV;    %æ±‚æ‰€æœ‰jä¸ªç‚¹çš„JçŸ©é˜µ
         end
         % Enforce symmetry on H
-        H1 = (c/2) * (H1 + H1');   %ÁîHÊÇÒ»¸ö¶Ô³Æ¾ØÕó£¬Çó¾ùÖµ
-        g1 = c * g1;   %ÇógµÄ¾ùÖµ
+        H1 = (c/2) * (H1 + H1');   %ä»¤Hæ˜¯ä¸€ä¸ªå¯¹ç§°çŸ©é˜µï¼Œæ±‚å‡å€¼
+        g1 = c * g1;   %æ±‚gçš„å‡å€¼
         
         % revised
         for j = 1:n-1
@@ -156,15 +157,15 @@ S3 = kronmex( C, I3 ) * S;
                     Ji(:,cols+dc) = [ sik(1)*P{k} sik(2)*P{k} sik(3)*P{k} ];
                 end
                 JijV = (Jj - Ji)*V;
-                g2 = g2 - (Rji' * JijV)';    %ÇóËùÓĞj¸öµãµÄÌİ¶È
+                g2 = g2 - (Rji' * JijV)';    %æ±‚æ‰€æœ‰jä¸ªç‚¹çš„æ¢¯åº¦
                 
                 if (nargout < 3), continue, end
-                H2 = H2 + JijV'*JijV;    %ÇóËùÓĞj¸öµãµÄJ¾ØÕó
+                H2 = H2 + JijV'*JijV;    %æ±‚æ‰€æœ‰jä¸ªç‚¹çš„JçŸ©é˜µ
             end
         end
         % Enforce symmetry on H
-        H2 = (c2/2) * (H2 + H2');   %ÁîHÊÇÒ»¸ö¶Ô³Æ¾ØÕó£¬Çó¾ùÖµ
-        g2 = c2 * g2;   %ÇógµÄ¾ùÖµ
+        H2 = (c2/2) * (H2 + H2');   %ä»¤Hæ˜¯ä¸€ä¸ªå¯¹ç§°çŸ©é˜µï¼Œæ±‚å‡å€¼
+        g2 = c2 * g2;   %æ±‚gçš„å‡å€¼
         %revised end
         g = g1 + lambda*g2;
         H = H1 + lambda*H2;
@@ -210,7 +211,7 @@ n = size(Wc,2);   % Wc 2T*n
 S = zeros(3*K,n);
 
 piM = cell(K,1);
-%MÊÇÃ¿ÈıÁĞÊÇÒ»¸ö×éºÏ, ¶ÔÓ¦ĞÎ×´»ùSÊÇÃ¿ÈıĞĞ
+%Mæ˜¯æ¯ä¸‰åˆ—æ˜¯ä¸€ä¸ªç»„åˆ, å¯¹åº”å½¢çŠ¶åŸºSæ˜¯æ¯ä¸‰è¡Œ
 for k = 1:K, k3 = 3*k-[2 1 0];
     Mk = M(:,k3);
     piM{k} = pinv(Mk); %
@@ -226,8 +227,8 @@ end
 
 function K = pgVecAxI (m,n, i)
 
-I = speye(i);  %Ï¡Êèµ¥Î»¾ØÕói*i
-G = kron(pgKmn(i,m), I) * kron(speye(m), I(:)); %kron ¼ÆËãÁ½¸ö¾ØÕóµÄKronecker»ı£¬kron(A,B)¾ÍÊÇ¾ØÕóAÖĞµÄÃ¿¸öÔªËØ¶¼³ËÒÔ¾ØÕóB
+I = speye(i);  %ç¨€ç–å•ä½çŸ©é˜µi*i
+G = kron(pgKmn(i,m), I) * kron(speye(m), I(:)); %kron è®¡ç®—ä¸¤ä¸ªçŸ©é˜µçš„Kroneckerç§¯ï¼Œkron(A,B)å°±æ˜¯çŸ©é˜µAä¸­çš„æ¯ä¸ªå…ƒç´ éƒ½ä¹˜ä»¥çŸ©é˜µB
 K = kron(speye(n), G);
 
 end
@@ -239,8 +240,8 @@ function Kmn = pgKmn (m, n)
 na = m*n;
 ind = 1:na;
 pos = reshape(ind, [ m n ])';
-%posÊÇn*mË÷Òı¾ØÕó£¬ÆäÖĞÔªËØ°´ĞĞ£º1, 2, 3, 4, 5 ... m*nm, pos(:)°´ÁĞ½«posÀ­³ÉÒ»ÁĞ
-Kmn = sparse( ind, pos(:), ones(na,1), na, na ); %KmnÖĞÖ»ÓĞ¹æ¶¨µÄ²¿·ÖÔªËØÎª1£¬ÆäËü²¿·ÖÎª0
+%posæ˜¯n*mç´¢å¼•çŸ©é˜µï¼Œå…¶ä¸­å…ƒç´ æŒ‰è¡Œï¼š1, 2, 3, 4, 5 ... m*nm, pos(:)æŒ‰åˆ—å°†posæ‹‰æˆä¸€åˆ—
+Kmn = sparse( ind, pos(:), ones(na,1), na, na ); %Kmnä¸­åªæœ‰è§„å®šçš„éƒ¨åˆ†å…ƒç´ ä¸º1ï¼Œå…¶å®ƒéƒ¨åˆ†ä¸º0
 % Kmn = zeros(na,na);
 % for row = 1:na
 %     Kmn(row, pos(row)) = 1;
