@@ -2,7 +2,6 @@
 #define CAFFE_EUCLIDEAN_LOSS_LAYER_HPP_
 
 #include <vector>
-
 #include "caffe/blob.hpp"
 #include "caffe/layer.hpp"
 #include "caffe/proto/caffe.pb.h"
