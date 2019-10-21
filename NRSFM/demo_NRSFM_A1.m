@@ -2,6 +2,7 @@
 % Demo A1: NRSFM with Rotation Invariant Kernels
 %
 % -----------------------------------------------------------------------------
+
 clear all
 strings = {'walking','face1','stretch','dance','pickup','yoga'};
 for i = 1:size(strings,2)
@@ -43,7 +44,7 @@ for i = 1:size(strings,2)
     num_lambda = 0;   %revised
     for lambda = 0.0001:0.0001:0.01  %revised
         num_lambda = num_lambda+1;  %revised
-        %运用矩阵分解优化X
+        %脭脣脫脙戮脴脮贸路脰陆芒脫脜禄炉X
         % Factorization W = M*S, with M = D*kron(BX,I): solve for X
         % revised
         [X,M,S,t,S3] = pgA1( W, D, K, B, lambda, [], opts );
