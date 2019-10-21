@@ -16,7 +16,6 @@ void RelevantLossLayer<Dtype>::Reshape(
 }
 
 //人脸坐标的排列方式为(x1,x2,x3,x3,x5,y1,y2,y3,y4,y5)
-
 template <typename Dtype>
 void RelevantLossLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
     const vector<Blob<Dtype>*>& top) {
