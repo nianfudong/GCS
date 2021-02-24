@@ -77,6 +77,5 @@ for i = 1:size(strings,2)
         fprintf('\n'); 
         fclose(fid);
     end  %revised
-    %%pgShowShapes3D(S0R, S3R);
 end
 % -----------------------------------------------------------------------------
