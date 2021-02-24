@@ -242,9 +242,6 @@ ind = 1:na;
 pos = reshape(ind, [ m n ])';
 %pos是n*m索引矩阵，其中元素按行：1, 2, 3, 4, 5 ... m*nm, pos(:)按列将pos拉成一列
 Kmn = sparse( ind, pos(:), ones(na,1), na, na ); %Kmn中只有规定的部分元素为1，其它部分为0
-% Kmn = zeros(na,na);
-% for row = 1:na
-%     Kmn(row, pos(row)) = 1;
-% end
+
 end
 % ----------------------------------------------------------------------------
