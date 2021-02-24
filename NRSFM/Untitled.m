@@ -1,11 +1,4 @@
-% n = 5;
-% num_lambda = 0;
-% for err3D=1:n
-%     num_lambda = num_lambda+1;
-%     err3D = rand(1);
-%     ERR(num_lambda) = err3D;
-% end
-%  dlmwrite('results.txt', ERR, ' ')
+
 
 c1= 0;
 n = 55;
